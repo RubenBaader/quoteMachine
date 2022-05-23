@@ -1,6 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 
+
+fetch('https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json')
+  .then (response => response.json())
+  .then (data => console.log(data));
+
+
 function App() {
   return (
     <div className="App">
@@ -15,7 +21,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Hello
         </a>
       </header>
     </div>
