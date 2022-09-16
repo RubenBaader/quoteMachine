@@ -20,8 +20,8 @@ class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      "quote": "hiii",
-      "author": "unknown"
+      "quote": "Loading",
+      "author": "..."
     };
     this.handleClick = this.handleClick.bind(this); 
   }
@@ -29,13 +29,6 @@ class App extends Component {
   componentDidMount(){
     QuoteSetter(QuoteGetter, URL).then(data => this.setState(data));
 
-/*     // Quick and dirty implementation of unit tests
-      const s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = 'https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js';
-      document.body.appendChild(s); 
-    // End unit test */
   };
 
   handleClick(){
@@ -53,7 +46,7 @@ class App extends Component {
             -- {this.state.author}
           </p>
           <div className='button-box'>
-            <button onClick={this.handleClick} className='button' id='new-quote' >New Quote</button>
+            <button onClick={this.handleClick} className='button' id='new-quote'>New Quote</button>
             <a 
             className='button'
             href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=` + this.state.quote + ` -- ` + this.state.author} 

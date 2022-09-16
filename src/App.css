@@ -13,9 +13,16 @@
 }
 
 #quote-box {
-  width: 40vw;
-  padding: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
+  min-height: 10em;
+  min-width: 15em;
+  max-width: 25em;
+  margin: 0.3em;
+  padding: 0.3em;
+  background-color: hsl(0, 0%, 30%);
   border: 2px dotted gray;
   border-radius: 10px;
 }
@@ -30,25 +37,22 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  gap: 4px;
+  gap: 0.2em;
 
 }
 
 .button {
-  display: inline-flex;
-  width: max-content;
-  height: auto;
+  /* display: inline-flex; */
+  /* width: max-content;
+  height: auto; */
+  padding: 0.3em;
+  background-color: hsl(240, 22%, 70%);
   border: none;
-  border-radius: 7px;
-  padding: 4px;
-  background-color: rgb(194, 194, 216);
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px hsl(240, 22%, 30%);
 
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: calc(0.7*(10px + 2vmin));
-  text-decoration: none;
   color: #000;
-}
-
-#new-quote {
-
+  font-size: calc(0.7*(10px + 2vmin));
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
 }
