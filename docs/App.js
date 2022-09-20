@@ -27,8 +27,8 @@ class App extends Component {
   }
   
   componentDidMount(){
-    QuoteSetter(QuoteGetter, URL).then(data => this.setState(data));
-
+    QuoteSetter(QuoteGetter, URL)
+    .then(data => this.setState(data));
   };
 
   handleClick(){

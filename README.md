@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Quote Machine
+## Introduction
+This is a learning project which I built to improve my skills with the JavaScript frontend library React. \
+The readme will detail the major functionalities of the project, whose purpose is to fetch and display random quotes in a content box. The quotes are paired with a source, declared as "author" in the code, and may be tweeted on a button press, if the user is logged in to Twitter. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project idea and applied data are from www.freeCodeCamp.org and belong to the Front End Development Libraries Certification curriculum.
 
-## Available Scripts
+## The State
+The state object stores the component's local data. It is always an object, which may then hold infinitely many keys, which in turn may store data of any type.
 
-In the project directory, you can run:
+## Rendering Elements in React
+Many React components can be updated from the state or user interaction. Doing so causes the element to re-render, usually with new information. \
+In this case, the App component first renders when the page is loaded, using the placeholder values for "Quote" and "Author" pre-written in the component's state.
 
-### `npm start`
+## Fetch API
+When the component mounts, it uses the Fetch API to access a JSON file at the URL fed to the quote getter - which acts as the quote setter's callback function.
+The response object is then parsed and reconverted to JSON before it is loaded to a quote data object. From the quote data object, a random quote is selected and the  "quote" and "author" keys are set to the respective values - React then automatically re-renders the App component to display the state info as the output.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Asynchronous Code
+Most JavaScript is single-threaded, synchronous code. This means that only one function may execute at a time, which may have serious consequences: Time-consuming processes may cause the browser or computer to lock up while calculations run, increasing response times and possibly even give the impression of a crash. \
+Asynchrous JavaScript allows us to let a function return a temporary output (a promise), continue the program's other calculations, and handle the actual output when it arrives. \
+In this case, the Fetch API and async/await keywords specify asynchronous functions, requesting data from the Net. \
+While the response may come within the blink of an eye, this is a slow process by computing standards, so an asynchronous approach is usually best.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## A Note on Using Class-Based React
+React introduced webhooks in version 16.8.0, which this project does not employ. Using the older class-based approach to components involved writing some boiler plater code which is handled under the hood in newer versions. \
+I believe having at least some experience with the class-based approach to React is primarily useful for two purposes: 
+1. Increased understanding of what goes on under the hood. Webhooks make development much faster and easier (in my opinion), but in doing so allow developers to skip several steps of the understanding process.
+2. Understanding class-based component for their own sake.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+It is important to remember that old knowledge does not necessarily become obsolete when a new version is released. The webhook introduction was not a breaking change, and rewriting a large code base to exclusively employ hooks may not be worth the time invested. Thus, knowledge of class-based components is likely to be useful when working with pre-2018 React apps.
 
-### `npm run build`
+## Conclusion
+The project has taught me about some key principles in web development, as well as some peripheral elements, which are still nice to know.
+I have developed or improved skills in the following areas:
+* Handling, updating and utilizing local state
+* Utilizing rendering and re-rendering to represent the current state
+* Utilizing asynchronous code and promise-based behaviour
+* Knowledge of class-based React components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I started the project in order to improve my skills with React. By that measure, the project can easily be considered a success. 
